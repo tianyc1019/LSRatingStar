@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let star : LSRatingStar = LSRatingStar.init(frame: CGRect(x:10, y:150,width:300 ,height:25)) { (ratingStar, rating) in
+            print("值变成了 ====  "+"\(rating)")
+        }
+        view.addSubview(star)
+        star.rating = 3.0
     }
 
     override func didReceiveMemoryWarning() {

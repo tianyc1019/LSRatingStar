@@ -12,6 +12,7 @@
 		31B8F6FF1E19FB270065118A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B8F6FD1E19FB270065118A /* Main.storyboard */; };
 		31B8F7011E19FB270065118A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B8F7001E19FB270065118A /* Assets.xcassets */; };
 		31B8F7041E19FB270065118A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B8F7021E19FB270065118A /* LaunchScreen.storyboard */; };
+		31B8F70F1E19FFF80065118A /* LSRatingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B8F70E1E19FFF80065118A /* LSRatingStar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		31B8F7001E19FB270065118A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31B8F7031E19FB270065118A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31B8F7051E19FB270065118A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31B8F70E1E19FFF80065118A /* LSRatingStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSRatingStar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +56,21 @@
 		31B8F6F81E19FB270065118A /* LSRatingStar */ = {
 			isa = PBXGroup;
 			children = (
+				31B8F70B1E19FBC60065118A /* LSRatingStar */,
 				31B8F6F91E19FB270065118A /* AppDelegate.swift */,
 				31B8F6FB1E19FB270065118A /* ViewController.swift */,
 				31B8F6FD1E19FB270065118A /* Main.storyboard */,
 				31B8F7001E19FB270065118A /* Assets.xcassets */,
 				31B8F7021E19FB270065118A /* LaunchScreen.storyboard */,
 				31B8F7051E19FB270065118A /* Info.plist */,
+			);
+			path = LSRatingStar;
+			sourceTree = "<group>";
+		};
+		31B8F70B1E19FBC60065118A /* LSRatingStar */ = {
+			isa = PBXGroup;
+			children = (
+				31B8F70E1E19FFF80065118A /* LSRatingStar.swift */,
 			);
 			path = LSRatingStar;
 			sourceTree = "<group>";
@@ -138,6 +149,7 @@
 			files = (
 				31B8F6FC1E19FB270065118A /* ViewController.swift in Sources */,
 				31B8F6FA1E19FB270065118A /* AppDelegate.swift in Sources */,
+				31B8F70F1E19FFF80065118A /* LSRatingStar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
