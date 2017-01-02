@@ -13,12 +13,12 @@ typealias ls_ratingChange = (_ ratingStar: LSRatingStar ,_ rating : CGFloat) -> 
 class LSRatingStar: UIView {
     
     /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
     
     @IBInspectable var rating : CGFloat = 0{//当前数值
         didSet{
@@ -56,19 +56,29 @@ class LSRatingStar: UIView {
     
     var ratingChangeed : ls_ratingChange? = nil ///值变化时的回调
     var isDrew : Bool = false
+
     
-    
-    init(frame: CGRect , ratingChange :  ls_ratingChange?){
-        super.init(frame: frame)
-        ratingChangeed = ratingChange
+    /// xib中可以直接用，但是需要将下面两个方法注释，不然会崩溃
+    override func layoutSubviews() {
+        super.layoutSubviews()
         setupUI()
         let animationTimeInterval = self.canAnimation ? self.animationTimeInterval : 0
         //开启动画改变foregroundRatingView可见范围
         UIView.animate(withDuration: animationTimeInterval, animations: {self.animationRatingChange()})
     }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
+//     init(frame: CGRect , ratingChange :  ls_ratingChange?){
+//        super.init(frame: frame)
+//        ratingChangeed = ratingChange
+//        setupUI()
+//        let animationTimeInterval = self.canAnimation ? self.animationTimeInterval : 0
+//        //开启动画改变foregroundRatingView可见范围
+//        UIView.animate(withDuration: animationTimeInterval, animations: {self.animationRatingChange()})
+//    }
+//   
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 }
 extension LSRatingStar {
     fileprivate func setupUI() {
@@ -84,7 +94,7 @@ extension LSRatingStar {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapRateView(_:)))
         tapGesture.numberOfTapsRequired = 1
         self.addGestureRecognizer(tapGesture)
-        
+
     }
     //根据图片名，创建一列RatingView
     fileprivate func setupRatingView(_ image: UIImage) ->UIView{
@@ -131,7 +141,7 @@ extension LSRatingStar {
     /// - Parameter realRatingScore: 点击坐标所占比例
     fileprivate func calculateRating(realRatingScore : CGFloat)  {
         if !incomplete {
-            rating = round(realRatingScore)
+           rating = round(realRatingScore)
         }else{
             let score : CGFloat = realRatingScore
             let integer : CGFloat = CGFloat(Int(score)/1)//整数部分
